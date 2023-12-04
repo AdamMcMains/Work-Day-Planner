@@ -15,8 +15,11 @@ const hour = date.getHours();
 const min = date.getMinutes();
 
 function convertId(id){
+
   var match; 
+  
   for(i = 0; i < 9;){
+
   if (timeID[i] == id){
     console.log("it matched!");
     match = IDNumb[i];
@@ -47,14 +50,19 @@ function savePlan(parentID){
     var idNumb = convertId(parentID);
     var child = (textBoxID[idNumb]);
     var childText = document.getElementById(child).value;
-    if (childText == null){
-      childText = "";
-    }
-    
     localStorage.setItem(parentID, childText);
     
     console.log(childText, "was saved successfully");  
 }
+function blankTextArea(){
+  for (i = 0; i < 9; i++){
+    var startingTextArea = document.getElementById(textBoxID[i]);
+    var startingText = document.createTextNode("");
+    startingTextArea.appendChild(startingText);
+}
+}
+
+blankTextArea();
 
 var currentTextBox = document.querySelectorAll("planInput");
   addEventListener("click", function(currentTextBox){
@@ -86,13 +94,13 @@ var currentSaveButton = document.getElementById(saveButtonID[0,1,2,3,4,5,6,7]);
     }
   }
     
-    for (i = 0; i < 8; i++){
-      var loadText = localStorage.getItem(timeID[i]);
-      var childID = (textBoxID[i])
-      var childTextBox = document.getElementById(childID);
-      var childText = document.createTextNode(loadText);
-      childTextBox.appendChild(childText);
-    }
+  for (i = 0; i < 8; i++){
+    var loadText = localStorage.getItem(timeID[i]);
+    var childID = (textBoxID[i])
+    var childTextBox = document.getElementById(childID);
+    var childText = document.createTextNode(loadText);
+    childTextBox.appendChild(childText);
+  }
    
     var printDate = date;
     y = document.getElementById("currentDay");

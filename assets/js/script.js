@@ -54,23 +54,16 @@ function savePlan(parentID){
     
     console.log(childText, "was saved successfully");  
 }
-function blankTextArea(){
-  for (i = 0; i < 9; i++){
-    var startingTextArea = document.getElementById(textBoxID[i]);
-    var startingText = document.createTextNode("");
-    startingTextArea.appendChild(startingText);
-}
-}
 
-blankTextArea();
 
-var currentTextBox = document.querySelectorAll("planInput");
+
+var currentTextBox = document.querySelector(textBoxID)
   addEventListener("click", function(currentTextBox){
     var parentTime = textEntryParent(currentTextBox);
     console.log(parentTime);
   });
 
-var currentSaveButton = document.getElementById(saveButtonID[0,1,2,3,4,5,6,7]);
+var currentSaveButton = document.getElementById(saveButtonID);
   currentSaveButton = addEventListener("click", function(currentSaveButton){
     var parentTime = saveButtonParent(currentSaveButton);
     savePlan(parentTime);

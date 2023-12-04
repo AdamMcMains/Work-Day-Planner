@@ -47,7 +47,12 @@ function savePlan(parentID){
     var idNumb = convertId(parentID);
     var child = (textBoxID[idNumb]);
     var childText = document.getElementById(child).value;
+    if (childText == null){
+      localStorage.setItem(parentID, '');
+    }
+    else{
     localStorage.setItem(parentID, childText);
+    }
     console.log(childText, "was saved successfully");  
 }
 

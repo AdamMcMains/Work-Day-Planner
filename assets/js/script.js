@@ -15,7 +15,6 @@ const hour = date.getHours();
 const min = date.getMinutes();
 
 function convertId(id){
-
   var match; 
   
   for(i = 0; i < 9;){
@@ -87,7 +86,7 @@ var currentSaveButton = document.getElementById(saveButtonID);
     }
   }
     
-  for (i = 0; i < 8; i++){
+  for (i = 0; i < 9; i++){
     var loadText = localStorage.getItem(timeID[i]);
     var childID = (textBoxID[i])
     var childTextBox = document.getElementById(childID);

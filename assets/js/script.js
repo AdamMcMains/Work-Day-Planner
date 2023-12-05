@@ -17,7 +17,7 @@ const min = date.getMinutes();
 function convertId(id){
   var match; 
   
-  for(i = 0; i < 9;){
+  for(i = 0; i < 10;){
 
   if (timeID[i] == id){
     console.log("it matched!");
@@ -71,7 +71,7 @@ var currentSaveButton = document.getElementById(saveButtonID);
   });
 
   var currentHour = hour;
-  for (i = 0; i < 9; i++){
+  for (i = 0; i < 10; i++){
     var currentHourID = convertId(timeID[i])
     var parentHour = (timeNumb[currentHourID])
 
@@ -86,7 +86,7 @@ var currentSaveButton = document.getElementById(saveButtonID);
     }
   }
     
-  for (i = 0; i < 9; i++){
+  for (i = 0; i < 10; i++){
     var loadText = localStorage.getItem(timeID[i]);
     var childID = (textBoxID[i])
     var childTextBox = document.getElementById(childID);
